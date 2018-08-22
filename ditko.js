@@ -37,94 +37,30 @@ const month_ph = new Date().getMonth() + 1;
 
 const day_ph = new Date().getDate();
 
-let month_string = "";
+let month_val;
 
-let day_string = "";
+let day_val;
 
-switch(month_ph)  {
-    case 1: 
-    month_string = "01";
-
-    case 2: 
-    month_string = "02";
-
-    case 3: 
-    month_string = "03";
-
-    case 4: 
-    month_string = "04";
-
-    case 5: 
-    month_string = "05";
-
-    case 6: 
-    month_string = "06";
-
-    case 7: 
-    month_string = "07";
-
-    case 6: 
-    month_string = "06";
-
-    case 7: 
-    month_string = "07";
-
-    case 8: 
-    month_string = "08";
-
-    case 9: 
-    month_string = "09";
+if (month_ph < 10) {
+    month_val = "0" + month_ph;
+}
+else {
+    month_val = month_ph;
 }
 
-if (month_string == "") {
-    month_string = month_ph;
+if (day_ph < 10) {
+    day_val = "0" + day_ph;
+}
+else {
+    day_val = day_ph;
 }
 
-switch(day_ph)  {
-    case 1: 
-    day_string = "01";
+export const month = month_val;
 
-    case 2: 
-    day_string = "02";
-
-    case 3: 
-    day_string = "03";
-
-    case 4: 
-    day_string = "04";
-
-    case 5: 
-    day_string = "05";
-
-    case 6: 
-    day_string = "06";
-
-    case 7: 
-    day_string = "07";
-
-    case 6: 
-    day_string = "06";
-
-    case 7: 
-    day_string = "07";
-
-    case 8: 
-    day_string = "08";
-
-    case 9: 
-    day_string = "09";
-}
-
-if (day_string == "") {
-    day_string = day_ph;
-}
-
-export const month = month_string;
-
-export const day = day_string;
+export const day = day_val;
 
 export const date = year + "-" + month + "-" + day;
 
 export const cookie = document.cookie;
 
-export const query_params = window.location.search;;
+export const query_params = window.location.search;
