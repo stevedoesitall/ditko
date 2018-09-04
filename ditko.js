@@ -30,12 +30,19 @@ export function create_el(e) {
     return document.createElement(e);
 };
 
+export function obj_check(e) { 
+    if (keys(e).length > 0) {
+        return "true";
+    }
+    else {
+        return "false";
+    }
+};
+
 export const headers = {
     "Accept" : "application/json",
     "Content-Type": "application/json"
 };
-
-export const year = new Date().getFullYear();
 
 const month_ph = new Date().getMonth() + 1;
 
@@ -58,6 +65,8 @@ if (day_ph < 10) {
 else {
     day_val = day_ph;
 }
+
+export const year = new Date().getFullYear();
 
 export const month = month_val;
 
