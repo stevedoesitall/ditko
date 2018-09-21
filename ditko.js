@@ -39,6 +39,36 @@ export function obj_check(e) {
     }
 };
 
+export function difference(array1, array2) {
+    const difference = [];
+    array1.forEach(el => {
+        if (!array2.includes(el)) {
+            difference.push(el);
+        }
+    })
+    return difference;
+};
+
+export function overlap(array1, array2) {
+    const overlap = [];
+    array1.forEach(el => {
+        if (array2.includes(el)) {
+            overlap.push(el);
+        }
+    })
+    return overlap;
+};
+
+export function union(array1, array2) {
+    const union = array1;
+    array2.forEach(el => {
+        if (!union.includes(el)) {
+            union.push(el);
+        }
+    })
+    return union;
+};
+
 export const headers = {
     "Accept" : "application/json",
     "Content-Type": "application/json"
