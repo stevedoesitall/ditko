@@ -45,7 +45,7 @@ export function difference(array1, array2) {
         if (!array2.includes(el)) {
             difference.push(el);
         }
-    })
+    });
     return difference;
 };
 
@@ -55,7 +55,7 @@ export function overlap(array1, array2) {
         if (array2.includes(el)) {
             overlap.push(el);
         }
-    })
+    });
     return overlap;
 };
 
@@ -65,7 +65,7 @@ export function union(array1, array2) {
         if (!union.includes(el)) {
             union.push(el);
         }
-    })
+    });
     return union;
 };
 
