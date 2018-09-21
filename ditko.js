@@ -39,13 +39,34 @@ export function obj_check(e) {
     }
 };
 
-export function difference(array1, array2) {
+export function difference(array1, array2, pos) {
     const difference = [];
-    array1.forEach(el => {
-        if (!array2.includes(el)) {
-            difference.push(el);
-        }
-    });
+    if (pos == 0 || pos == undefined) {
+        array1.forEach(el => {
+            if (!array2.includes(el)) {
+                difference.push(el);
+            }
+        });
+    }
+    else if (pos == 1) {
+        array2.forEach(el => {
+            if (!array1.includes(el)) {
+                difference.push(el);
+            }
+        });
+    }
+    else if (pos == 2) {
+        array1.forEach(el => {
+            if (!array2.includes(el)) {
+                difference.push(el);
+            }
+        });
+        array2.forEach(el => {
+            if (!array1.includes(el)) {
+                difference.push(el);
+            }
+        });
+    }
     return difference;
 };
 
